@@ -38,7 +38,7 @@ class MemoryStorag : MemoStorageType {
     
     @discardableResult
     func delete(memo: Memo) -> Observable<Memo> {
-        if let index = list.first(where: {$0 == memo} ){
+        if let index = list.firstIndex(where: {$0 == memo}) {
             list.remove(at: index)
         }
         store.onNext(list)
